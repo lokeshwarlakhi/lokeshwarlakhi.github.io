@@ -1,32 +1,37 @@
-# Premium Cinematic Developer Portfolio (Vite + React)
+# 🌌 Lokeswar | Gen AI Engineer
 
-A world-class, production-ready developer portfolio architected for speed, aesthetics, and simplicity. Built specifically for **GitHub Pages** with a data-driven philosophy and a markdown-powered blog system.
+> **[View Live Portfolio →](https://lokeshwarlakhi.github.io/)**
 
-## 🚀 Tech Stack
+A premium, cinematic personal brand website showcasing futuristic design, motion effects, and a deep focus on the GenAI & LLM ecosystem. Built with a data-driven architecture for seamless maintenance and high-performance delivery.
 
-- **Framework**: React 18 + Vite (ESM)
-- **Styling**: Tailwind CSS v3
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Routing**: React Router (HashRouter for GH Pages compatibility)
-- **Blog System**: Markdown (`react-markdown`) + Frontmatter (`gray-matter`)
-- **Deployment**: `gh-pages`
+---
 
-## 📁 Project Structure
+## 📱 Responsive Experience
 
-```text
-/src
-  /blogs          # Your markdown blog posts (.md)
-  /components
-    /layout       # Global layout elements (Navbar, Footer)
-    /sections     # Page sections (Hero, About, Projects, etc.)
-    /ui           # Reusable UI primitives
-  /data           # Central source of truth (siteData.ts)
-  /lib            # Shared utilities (blog parsing, cn)
-  /pages          # Page components (Home, BlogDetail)
-  /types          # TypeScript interfaces
-/public           # Static assets (images, favicon)
-```
+![Desktop View](public/screenshots/desktop.png)
+
+| 📱 Mobile View | 📟 Tablet View |
+| :---: | :---: |
+| ![Mobile](public/screenshots/mobile.png) | ![Tablet](public/screenshots/tablet.png) |
+
+---
+
+## ⚡ Technical Stack
+
+- **Core:** React 18, TypeScript, Vite
+- **Motion:** Framer Motion (Cinematic transitions & scroll effects)
+- **Styling:** Tailwind CSS (Glassmorphism & dark mode)
+- **Icons:** Simple Icons (Colored brand assets) & Lucide React
+- **Content:** Centralized `siteData.ts` (JSON-driven architecture)
+- **Blog:** Markdown-based local CMS with dynamic parsing
+
+## 🚀 Key Features
+
+- **Identity Dashboard:** A unified, high-impact view of professional persona and expertise.
+- **Brand Ecosystem:** Real colored technology icons for high-quality professional presentation.
+- **Cinematic UX:** Smooth scroll interactions, glassmorphic cards, and subtle glow effects.
+- **Responsive Architecture:** Fully optimized for Mobile, Tablet, and Desktop viewports.
+- **Dynamic Content:** Entire portfolio updates instantly via a single configuration file.
 
 ## 🛠️ How to Customize
 
@@ -36,31 +41,9 @@ Everything on the website is controlled via `src/data/siteData.ts`. Simply edit 
 ### 2. Add Blog Posts
 To add a new blog post:
 1. Create a `.md` file in `src/blogs/`.
-2. Add frontmatter at the top:
-   ```markdown
-   ---
-   title: "Your Title"
-   date: "2026-05-15"
-   description: "Brief summary"
-   tags: ["Tag1", "Tag2"]
-   cover: "https://unsplash.com/..."
-   ---
-   # Your Content
-   ```
+2. Add frontmatter at the top (title, date, description, tags, cover).
 3. The blog section will automatically detect and list the new post.
 
-## 🚢 Deployment (GitHub Pages)
-
-This project is pre-configured for GitHub Pages.
-
-1. **Update `vite.config.ts`**:
-   Change the `base` property to your repository name:
-   ```typescript
-   base: '/your-repo-name/',
-   ```
-
-2. **Deploy**:
-   Run the following command:
    ```bash
    npm run deploy
    ```
