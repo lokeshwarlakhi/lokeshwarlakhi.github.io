@@ -8,11 +8,7 @@ A premium, cinematic personal brand website showcasing futuristic design, motion
 
 ## 📱 Responsive Experience
 
-![Desktop View](public/screenshots/desktop.png)
-
-| 📱 Mobile View | 📟 Tablet View |
-| :---: | :---: |
-| ![Mobile](public/screenshots/mobile.png) | ![Tablet](public/screenshots/tablet.png) |
+![Desktop View](public/imgs/gallery/desktop.png)
 
 ---
 
