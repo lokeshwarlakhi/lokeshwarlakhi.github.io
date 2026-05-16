@@ -115,7 +115,7 @@ export const ShareButtons = ({ title, url, className }: ShareButtonsProps) => {
       </button>
 
       {/* Native Share Button (Visible only on supported browsers, e.g., Mobile) */}
-      {typeof navigator !== 'undefined' && navigator.share && (
+      {typeof navigator !== 'undefined' && !!navigator.share && (
         <button
           onClick={handleNativeShare}
           className="p-3 rounded-xl glass-dark border border-white/5 hover:text-primary hover:bg-primary/10 hover:border-primary/20 transition-all duration-300 md:hidden"
