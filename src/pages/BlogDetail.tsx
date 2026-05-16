@@ -2,8 +2,10 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { getPostBySlug } from "@/lib/blogUtils";
 import ReactMarkdown from "react-markdown";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Calendar, Clock, ArrowLeft, Share2, Tag } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ShareButtons } from "@/components/ui/ShareButtons";
+import { NewsletterForm } from "@/components/ui/NewsletterForm";
 
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -110,28 +112,15 @@ export default function BlogDetail() {
             <aside className="hidden lg:block">
               <div className="sticky top-32 space-y-12">
                 <div className="space-y-4">
-                  <h4 className="text-xs uppercase tracking-widest font-bold text-white/40">Share</h4>
-                  <div className="flex flex-col gap-4">
-                    <button className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
-                      <Share2 size={18} className="group-hover:scale-110 transition-transform" /> 
-                      Twitter
-                    </button>
-                    <button className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
-                      <Share2 size={18} className="group-hover:scale-110 transition-transform" /> 
-                      LinkedIn
-                    </button>
-                  </div>
+                  <ShareButtons title={post.title} />
                 </div>
 
-                <div className="p-6 rounded-3xl glass-dark border border-white/5">
-                  <h4 className="text-sm font-bold text-white mb-4">Newsletter</h4>
-                  <p className="text-xs text-muted-foreground mb-4">Join my circle for AI & Engineering insights.</p>
-                  <input 
-                    type="email" 
-                    placeholder="Email address"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs outline-none focus:border-primary/50 mb-3"
-                  />
-                  <button className="w-full bg-primary text-primary-foreground text-xs font-bold py-2 rounded-xl">Subscribe</button>
+                <div className="p-8 rounded-[2rem] glass-dark border border-white/5 space-y-4">
+                  <div>
+                    <h4 className="text-sm font-bold text-white mb-1">Newsletter</h4>
+                    <p className="text-xs text-muted-foreground">Join my circle for AI & Engineering insights.</p>
+                  </div>
+                  <NewsletterForm />
                 </div>
               </div>
             </aside>

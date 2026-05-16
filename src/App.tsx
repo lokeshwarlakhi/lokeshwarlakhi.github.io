@@ -5,6 +5,7 @@ import BlogDetail from './pages/BlogDetail'
 import Leo from './pages/Leo'
 import Interests from './pages/Interests'
 import DigitalRecs from './pages/DigitalRecs'
+import Thanks from './pages/Thanks'
 import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { ScrollProgress } from './components/ui/ScrollProgress'
@@ -34,6 +35,7 @@ function App() {
         <Route path="/leo" element={<Leo />} />
         <Route path="/interests" element={<Interests />} />
         <Route path="/recs" element={<DigitalRecs />} />
+        <Route path="/thanks" element={<Thanks />} />
         <Route path="*" element={<Home />} />
       </Routes>
 

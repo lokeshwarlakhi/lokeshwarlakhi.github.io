@@ -80,6 +80,24 @@ VITE_EMAILJS_TEMPLATE_ID=your_id
 VITE_EMAILJS_PUBLIC_KEY=your_key
 ```
 
+### 4. Newsletter (Buttondown)
+The newsletter system uses **Buttondown**, the simplest way to manage mailing lists on static sites.
+
+1.  Create a free account at [Buttondown.email](https://buttondown.email/).
+2.  Go to your **Settings** and find your `Username`.
+3.  Add it to your `.env` file:
+```env
+VITE_BUTTONDOWN_USERNAME=your_username
+```
+
+### 5. Custom "Thank You" Page
+A hidden, witty confirmation page is available at `#/thanks`. Use this as your Buttondown redirect URL to keep the cinematic experience.
+
+1.  In Buttondown, go to **Settings** -> **Subscribers** -> **Confirmation**.
+2.  Set the **Redirect URL** to: `https://yourusername.github.io/#/thanks`.
+3.  **Customize:** You can edit the witty copy and meme image in `src/data/siteData.ts` under the `thanksPage` object.
+4.  **Meme Image:** Replace `public/imgs/gallery/thanks_meme.png` with your own easter egg.
+
 ---
 
 ## 🚢 Deployment (GitHub Pages)

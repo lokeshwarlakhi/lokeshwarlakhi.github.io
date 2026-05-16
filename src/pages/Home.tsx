@@ -7,6 +7,7 @@ import { About } from "@/components/sections/About";
 import { TechStack } from "@/components/sections/TechStack";
 import { BlogSection } from "@/components/sections/BlogSection";
 import { Contact } from "@/components/sections/Contact";
+import { Newsletter } from "@/components/sections/Newsletter";
 
 export default function Home() {
   const location = useLocation();
@@ -29,6 +30,7 @@ export default function Home() {
       <Projects />
       <Experience />
       <BlogSection />
+      <Newsletter />
       <Contact />
     </main>
   );

@@ -207,5 +207,15 @@ export const siteData: SiteData = {
     { id: 'rec-9', title: 'Prakhar Gupta Experience', description: 'Deep, unfiltered conversations exploring the complexities of the human experience.', type: 'podcast', image: '/imgs/gallery/pgx.png' },
     { id: 'rec-10', title: 'The Holy Geeta', description: 'An profound exploration of the Bhagavad Gita by Swamy Chinmayananda, offering timeless wisdom.', type: 'book', image: '/imgs/gallery/holy-geeta.jpeg' },
     { id: 'rec-11', title: 'Breaking Bad', description: 'A masterful exploration of morality and causality, following the descent of a chemistry teacher into the dark world of a drug kingpin.', type: 'series', image: '/imgs/series/breaking-bad.jpeg' }
-  ]
+  ],
+  thanksPage: {
+    heading: "You're in.",
+    subtext: "Now go confirm your email before the internet thinks you're a bot.",
+    wittyNote: "Sometimes the confirmation email hides in spam. A little social anxiety, perhaps.",
+    memeImage: "/imgs/gallery/thanks_meme.gif",
+    buttons: [
+      { text: "Back Home", link: "/", variant: "primary" },
+      { text: "Explore Blogs", link: "/blog", variant: "secondary" }
+    ]
+  }
 };

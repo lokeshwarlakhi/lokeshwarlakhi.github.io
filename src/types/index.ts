@@ -99,6 +99,18 @@ export interface ContactDetails {
   availability: string;
 }
 
+export interface ThanksPage {
+  heading: string;
+  subtext: string;
+  wittyNote: string;
+  memeImage: string;
+  buttons: {
+    text: string;
+    link: string;
+    variant: 'primary' | 'secondary';
+  }[];
+}
+
 export interface SiteData {
   metadata: {
     title: string;
@@ -118,4 +130,5 @@ export interface SiteData {
   leo: LeoData;
   interests: Interest[];
   recommendations: Recommendation[];
+  thanksPage?: ThanksPage;
 }
