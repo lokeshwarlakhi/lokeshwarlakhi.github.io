@@ -61,9 +61,24 @@ cover: "https://images.unsplash.com/..."
 # Your content starts here...
 ```
 
-### 3. Personalizing the UI
-- **Colors & Styling:** Most global styles are handled via Tailwind in `tailwind.config.js` and `src/index.css`.
-- **Icons:** We use a mix of `Lucide React` and `Simple Icons`. You can update these in `siteData.ts`.
+### 3. Contact Form (EmailJS)
+The contact form is powered by **EmailJS**, which works flawlessly on static sites like GitHub Pages.
+
+1.  Create a free account at [EmailJS.com](https://www.emailjs.com/).
+2.  Add a **New Service** (e.g., Gmail) and note the `Service ID`.
+3.  Create an **Email Template** with these variables:
+    - `{{from_name}}`
+    - `{{from_email}}`
+    - `{{subject}}`
+    - `{{message}}`
+    - `{{timestamp}}`
+4.  Copy your **Public Key** from the `Account` tab.
+5.  Create a `.env` file in the root directory (using `.env.example` as a template) and paste your keys:
+```env
+VITE_EMAILJS_SERVICE_ID=your_id
+VITE_EMAILJS_TEMPLATE_ID=your_id
+VITE_EMAILJS_PUBLIC_KEY=your_key
+```
 
 ---
 

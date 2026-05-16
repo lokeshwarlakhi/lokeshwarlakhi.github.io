@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/Section";
 import { siteData } from "@/data/siteData";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Calendar, Send, Code2, AtSign, User } from "lucide-react";
+import { ContactForm } from "./ContactForm";
 
 const BrandIcons: any = {
   Github: () => (
@@ -99,38 +100,7 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="glass-dark p-10 rounded-[2.5rem] border border-white/5 relative shadow-2xl"
         >
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest font-bold text-muted-foreground ml-1">Name</label>
-                <input 
-                  type="text" 
-                  className="w-full h-14 px-6 rounded-2xl bg-white/5 border border-white/10 focus:border-primary/50 outline-none transition-all placeholder:text-muted-foreground/30"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest font-bold text-muted-foreground ml-1">Email</label>
-                <input 
-                  type="email" 
-                  className="w-full h-14 px-6 rounded-2xl bg-white/5 border border-white/10 focus:border-primary/50 outline-none transition-all placeholder:text-muted-foreground/30"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest font-bold text-muted-foreground ml-1">Message</label>
-              <textarea 
-                className="w-full h-40 p-6 rounded-2xl bg-white/5 border border-white/10 focus:border-primary/50 outline-none transition-all resize-none placeholder:text-muted-foreground/30"
-                placeholder="How can I help you?"
-              />
-            </div>
-
-            <button className="w-full h-16 rounded-2xl bg-primary text-primary-foreground font-bold text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
-              Send Message <Send size={20} />
-            </button>
-          </form>
+          <ContactForm />
         </motion.div>
       </div>
     </Section>
