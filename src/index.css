@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground selection:bg-primary/30 selection:text-primary min-h-screen;
+    font-family: var(--font-mono);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full border-4 border-background hover:bg-primary/50 transition-colors;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-2xl border border-white/5;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 209, 102, 0.3);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#ffd166] to-[#f6d365] bg-clip-text text-transparent;
+  }
+
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+  }
+
+  /* Custom Typography for Markdown */
+  .prose {
+    @apply max-w-none text-[17px] md:text-[19px];
+  }
+  .prose h1 { @apply text-4xl md:text-6xl font-bold mb-10 mt-16 text-white tracking-tight leading-tight; }
+  .prose h2 { @apply text-3xl md:text-4xl font-bold mb-8 mt-14 text-white tracking-tight border-b border-white/5 pb-4 leading-tight; }
+  .prose h3 { @apply text-2xl md:text-3xl font-bold mb-6 mt-12 text-white tracking-tight; }
+  .prose p { @apply text-muted-foreground/90 leading-[1.8] mb-8 font-normal; }
+  .prose ul { @apply list-none mb-8 space-y-4 text-muted-foreground/90 pl-0; }
+  .prose ul li { @apply relative pl-8; }
+  .prose ul li::before { content: "→"; @apply absolute left-0 text-primary font-bold; }
+  .prose ol { @apply list-decimal list-inside mb-8 space-y-4 text-muted-foreground/90 font-medium; }
+  .prose a { @apply text-primary font-bold decoration-primary/30 underline-offset-4 underline hover:decoration-primary transition-all; }
+  .prose blockquote { @apply border-l-4 border-primary pl-8 italic text-white/90 my-12 bg-white/[0.02] py-8 pr-8 rounded-r-3xl text-xl leading-relaxed; }
+  .prose pre { @apply bg-[#0d1117] border border-white/10 rounded-2xl p-6 md:p-8 mb-10 overflow-x-auto shadow-2xl; }
+  .prose code { @apply text-primary font-mono text-[0.9em] bg-primary/10 px-1.5 py-0.5 rounded font-medium; }
+  .prose pre code { @apply bg-transparent p-0 text-[14px] md:text-[15px] leading-relaxed text-white/80; }
+  .prose img { @apply rounded-[2.5rem] border border-white/5 my-16 shadow-2xl w-full; }
+  .prose hr { @apply border-white/5 my-20; }
+  .prose strong { @apply text-white font-bold; }
+}
