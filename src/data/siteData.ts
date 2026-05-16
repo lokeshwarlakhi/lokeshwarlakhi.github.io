@@ -15,7 +15,7 @@ export const siteData: SiteData = {
     ctaText: 'View Projects',
     ctaLink: '#projects',
     secondaryCtaText: 'Download Resume',
-    secondaryCtaLink: '#contact',
+    secondaryCtaLink: 'https://drive.google.com/file/d/1YjxBANBeq1-KuK5Zb4jyuIbWNITPBBpF/view?usp=sharing',
   },
   about: {
     title: 'The Profile',
@@ -77,7 +77,7 @@ export const siteData: SiteData = {
       id: 'youtube-rag',
       title: 'YouTube RAG Chat',
       description: 'A context-aware semantic search pipeline for video transcripts. Built with LangChain, Pinecone, and OpenAI.',
-      thumbnail: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800',
+      thumbnail: '/imgs/gallery/youtube_rag.jpeg',
       tags: ['Python', 'GenAI', 'RAG'],
       githubUrl: 'https://github.com/lokeshwarlakhi/RAG-Chat-with-YouTube',
       demoUrl: '#',
@@ -87,7 +87,7 @@ export const siteData: SiteData = {
       id: 'expreme',
       title: 'Expreme',
       description: 'A real-time facial expression-based music assistant using computer vision and deep learning.',
-      thumbnail: 'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&q=80&w=800',
+      thumbnail: '/imgs/gallery/expreme.jpeg',
       tags: ['Deep Learning', 'OpenCV', 'Python'],
       githubUrl: 'https://github.com/lokeshwarlakhi/Expreme_Music_Assistant',
       demoUrl: '#',
@@ -99,7 +99,7 @@ export const siteData: SiteData = {
       description: 'A premium, cinematic personal brand website showcasing futuristic design and motion effects.',
       thumbnail: 'https://images.unsplash.com/photo-1635332396677-4c263e723967?auto=format&fit=crop&q=80&w=800',
       tags: ['React', 'Framer Motion', 'Tailwind'],
-      githubUrl: '#',
+      githubUrl: 'https://github.com/lokeshwarlakhi/lokeshwarlakhi.github.io',
       demoUrl: '#',
       isFeatured: true,
     }
@@ -215,7 +215,7 @@ export const siteData: SiteData = {
     memeImage: "/imgs/gallery/thanks_meme.gif",
     buttons: [
       { text: "Back Home", link: "/", variant: "primary" },
-      { text: "Explore Blogs", link: "/blog", variant: "secondary" }
+      { text: "Explore Blogs", link: "/all-posts", variant: "secondary" }
     ]
   }
 };
