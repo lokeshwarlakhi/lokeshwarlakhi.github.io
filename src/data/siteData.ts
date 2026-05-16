@@ -97,7 +97,7 @@ export const siteData: SiteData = {
       id: 'ai-portfolio',
       title: 'AI Portfolio',
       description: 'A premium, cinematic personal brand website showcasing futuristic design and motion effects.',
-      thumbnail: 'https://images.unsplash.com/photo-1635332396677-4c263e723967?auto=format&fit=crop&q=80&w=800',
+      thumbnail: '/imgs/gallery/portfolio.jpeg',
       tags: ['React', 'Framer Motion', 'Tailwind'],
       githubUrl: 'https://github.com/lokeshwarlakhi/lokeshwarlakhi.github.io',
       demoUrl: '#',
