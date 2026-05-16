@@ -12,17 +12,17 @@ export const BlogSection = () => {
       <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
         <div className="space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            Latest <span className="gradient-text">Insights</span>
+            Latest <span className="gradient-text">Posts</span>
           </h2>
           <p className="text-muted-foreground max-w-xl">
             Writing about technical architecture, AI innovation, and lessons learned along the way.
           </p>
         </div>
         <Link 
-          to="/blog" 
+          to="/all-posts" 
           className="group flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
         >
-          Explore the Archive <ArrowRight size={18} />
+          Explore All Posts <ArrowRight size={18} />
         </Link>
       </div>
 

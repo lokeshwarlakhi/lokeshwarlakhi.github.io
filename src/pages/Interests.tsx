@@ -26,7 +26,7 @@ const Interests = () => {
 
           <header className="space-y-4 max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white">
-              The <span className="gradient-text">Curiosities.</span>
+              <span className="gradient-text">Curiosities.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               A collection of things that fascinate me, inspire my work, and keep my mind engaged outside the terminal.

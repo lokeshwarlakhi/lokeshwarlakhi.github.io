@@ -110,7 +110,7 @@ export default function BlogArchive() {
             animate={{ opacity: 1, x: 0 }}
           >
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6">
-              The <span className="gradient-text">Archive</span>
+              <span className="gradient-text">All Posts</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
               Thoughts on AI architecture, engineering precision, and the future of intelligent systems.

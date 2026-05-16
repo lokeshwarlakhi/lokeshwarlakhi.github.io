@@ -38,11 +38,11 @@ export default function BlogDetail() {
           {/* Header */}
           <header className="mb-16">
             <Link 
-              to="/blog" 
+              to="/all-posts" 
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-12 group"
             >
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> 
-              Back to Archive
+              Back to All Posts
             </Link>
 
             <motion.div
