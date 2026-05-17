@@ -106,6 +106,21 @@ export default function BlogDetail() {
               prose-blockquote:text-white prose-blockquote:italic prose-blockquote:bg-primary/5 prose-blockquote:py-2
             ">
               <ReactMarkdown>{post.content}</ReactMarkdown>
+
+              {/* Cinematic Newsletter Callout at the bottom of the blog */}
+              <div className="mt-16 pt-8 border-t border-white/10">
+                <p className="text-lg text-muted-foreground italic">
+                  Enjoyed this post?{" "}
+                  <Link 
+                    to="/newsletter" 
+                    className="text-primary font-bold hover:underline transition-all relative group inline-flex items-center gap-1 not-italic"
+                  >
+                    Join my newsletter
+                    <span className="absolute left-0 bottom-0 w-full h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  </Link>{" "}
+                  to get the next one directly in your inbox.
+                </p>
+              </div>
             </article>
 
             {/* Sidebar / TOC placeholder */}

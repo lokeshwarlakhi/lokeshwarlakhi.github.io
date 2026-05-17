@@ -22,7 +22,7 @@ export const Newsletter = () => {
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest"
               >
-                <Sparkles size={14} /> The Inner Circle
+                <Sparkles size={14} /> The Learning Loop
               </motion.div>
 
               <div className="space-y-4">
