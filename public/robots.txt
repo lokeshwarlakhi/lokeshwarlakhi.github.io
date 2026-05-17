@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lokeshwarlakhi.github.io/sitemap.xml
