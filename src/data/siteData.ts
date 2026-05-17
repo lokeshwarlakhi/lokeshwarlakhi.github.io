@@ -35,7 +35,7 @@ export const siteData: SiteData = {
         { name: 'HuggingFace', icon: 'Brain' },
         { name: 'RAG Pipelines', icon: 'Database' },
         { name: 'AI Agents', icon: 'Bot' },
-        { name: 'Prompt Engineering', icon: 'Zap' },
+        { name: 'Prompt Engineering', icon: 'Keyboard' },
         { name: 'MCP (Model Context Protocol)', icon: 'Share2' }
       ]
     },
@@ -55,7 +55,6 @@ export const siteData: SiteData = {
       skills: [
         { name: 'FastAPI', icon: 'Zap' },
         { name: 'C# / .NET', icon: 'Monitor' },
-        { name: 'Node.js', icon: 'Box' },
         { name: 'REST APIs', icon: 'Globe' },
         { name: 'Microservices', icon: 'Server' }
       ]
@@ -98,11 +97,11 @@ export const siteData: SiteData = {
       title: 'AI Portfolio',
       description: 'A premium, cinematic personal brand website showcasing futuristic design and motion effects.',
       thumbnail: '/imgs/gallery/portfolio.jpeg',
-      tags: ['React', 'Framer Motion', 'Tailwind'],
+      tags: ['Vibe code','React', 'Framer Motion', 'Tailwind'],
       githubUrl: 'https://github.com/lokeshwarlakhi/lokeshwarlakhi.github.io',
       demoUrl: '#',
       isFeatured: true,
-    }
+    },
   ],
   experience: [
     {

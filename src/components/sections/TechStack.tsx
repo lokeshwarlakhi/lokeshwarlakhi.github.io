@@ -1,12 +1,6 @@
 import { siteData } from "@/data/siteData";
 import { motion } from "framer-motion";
-import * as LucideIcons from "lucide-react";
-
-const IconRenderer = ({ iconName, className }: { iconName?: string; className?: string }) => {
-  if (!iconName) return null;
-  const Icon = (LucideIcons as any)[iconName];
-  return Icon ? <Icon className={className} /> : null;
-};
+import { TechIcon } from "./About";
 
 export const TechStack = () => {
   const { skills } = siteData;
@@ -55,8 +49,8 @@ export const TechStack = () => {
                 whileHover={{ y: -2 }}
                 className="group flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-primary/50 group-hover:text-primary transition-all duration-300">
-                  <IconRenderer iconName={skill.icon} className="w-4 h-4 opacity-50 group-hover:opacity-100" />
+                <div className="w-8 h-8 rounded-lg bg-[#FAF7F0] flex items-center justify-center border border-white/10 text-zinc-900 group-hover:border-primary/50 group-hover:text-primary transition-all duration-300 shadow-sm p-1.5">
+                  <TechIcon name={skill.name} iconName={skill.icon} className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity" />
                 </div>
                 
                 <p className="text-[12px] font-medium text-white/60 group-hover:text-white transition-colors truncate">

@@ -6,40 +6,49 @@ import * as Icons from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // --- TECH ICON COMPONENT ---
-const TechIcon = ({ name, iconName, className }: { name: string; iconName?: string; className?: string }) => {
+export const TechIcon = ({ name, iconName, className }: { name: string; iconName?: string; className?: string }) => {
   // Mapping for names that don't match simpleicons slugs
   const slugMap: Record<string, string> = {
-    "Azure OpenAI": "azure",
+    "Azure OpenAI": "microsoftazure",
     "LangChain": "langchain",
     "Ollama": "ollama",
     "HuggingFace": "huggingface",
     "RAG Pipelines": "databricks",
-    "AI Agents": "openai",
     "Python": "python",
     "PyTorch": "pytorch",
     "TensorFlow": "tensorflow",
-    "Pinecone": "pinecone",
     "ChromaDB": "mongodb",
     "FastAPI": "fastapi",
     "C# / .NET": "dotnet",
-    "Node.js": "nodedotjs",
     "Docker": "docker",
     "Git": "git",
     "Linux": "linux",
     "VS Code": "visualstudiocode",
     "Jupyter": "jupyter",
-    "Prompt Engineering": "openai",
     "Vector Search": "googlecloud",
     "REST APIs": "postman",
     "Microservices": "kubernetes",
     "CI/CD": "githubactions"
   };
 
+  if (name === "Pinecone") {
+    return (
+      <img 
+        src="https://raw.githubusercontent.com/n8n-io/n8n/master/packages/nodes-base/nodes/VectorStore/Pinecone/pinecone.svg" 
+        alt={name}
+        className={cn("object-contain w-full h-full", className)}
+        onError={(e) => {
+          (e.target as HTMLImageElement).style.display = 'none';
+        }}
+      />
+    );
+  }
+
   const slug = slugMap[name] || name.toLowerCase().replace(/[^a-z0-9]/g, "");
   
   // For specialized/non-brand icons, we can still fallback to Lucide
   const isBrand = !!slugMap[name] || [
-    "python", "pytorch", "tensorflow", "fastapi", "docker", "git", "linux", "nodedotjs", "azure"
+    "python", "pytorch", "tensorflow", "fastapi", "docker", "git", "linux", "azure"
   ].includes(slug);
 
   if (isBrand) {
@@ -47,7 +56,7 @@ const TechIcon = ({ name, iconName, className }: { name: string; iconName?: stri
       <img 
         src={`https://cdn.simpleicons.org/${slug}`} 
         alt={name}
-        className={cn("object-contain", className)}
+        className={cn("object-contain w-full h-full", className)}
         onError={(e) => {
           (e.target as HTMLImageElement).style.display = 'none';
         }}
@@ -166,7 +175,7 @@ export const About = () => {
                 <div className="grid grid-cols-4 gap-4">
                   {skills[0].skills.slice(0, 4).map((skill) => (
                     <div key={skill.name} className="glass-dark p-4 rounded-2xl border border-white/5 flex flex-col items-center gap-3 group hover:border-primary/30 transition-all">
-                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:text-primary transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#FAF7F0] flex items-center justify-center border border-white/10 text-zinc-900 group-hover:text-primary transition-colors shadow-sm">
                         <TechIcon name={skill.name} iconName={skill.icon} className="w-5 h-5" />
                       </div>
                       <span className="text-[10px] uppercase tracking-widest font-bold text-white/40 group-hover:text-white transition-colors">{skill.name}</span>
