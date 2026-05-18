@@ -123,8 +123,6 @@ export interface SiteData {
   skills: SkillCategory[];
   projects: Project[];
   experience: Experience[];
-  beyondTheCode: BeyondTheCodeItem[];
-  blogPreviews: BlogPreview[];
   contact: ContactDetails;
   socials: SocialLink[];
   leo: LeoData;

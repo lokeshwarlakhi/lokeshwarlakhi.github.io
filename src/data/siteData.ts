@@ -136,36 +136,6 @@ export const siteData: SiteData = {
       technologies: ['ML', 'Research', 'Python']
     }
   ],
-  beyondTheCode: [
-    {
-      id: 'btc-1',
-      title: 'The Witty Quote',
-      content: 'Built with ❤️, ☕, and a questionable amount of Google searches.',
-      category: 'philosophy'
-    },
-    {
-      id: 'btc-2',
-      title: 'RAG Optimization',
-      content: 'Optimization is not just about speed; it is about the precision of information retrieval in an era of noise.',
-      category: 'thought'
-    },
-    {
-      id: 'btc-3',
-      title: 'The Gen AI Era',
-      content: 'Generative AI is not just a tool; it is a new paradigm for human-computer collaboration.',
-      category: 'idea'
-    }
-  ],
-  blogPreviews: [
-    {
-      id: 'blog-1',
-      title: 'Rise of small Language Models',
-      excerpt: 'Exploring why SLMs are becoming crucial for edge computing and privacy-first AI.',
-      date: 'May 2026',
-      readTime: '6 min read',
-      slug: 'rise-of-slms'
-    }
-  ],
   contact: {
     email: 'lokeshwarlakhi@gmail.com',
     location: 'Remote / India',

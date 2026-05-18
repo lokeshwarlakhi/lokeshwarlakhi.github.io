@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 export const BlogSection = () => {
-  const posts = getAllPosts();
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <Section id="blog" className="bg-muted/30">

@@ -62,8 +62,14 @@ export const getAllPosts = (): BlogPost[] => {
     } as BlogPost;
   });
 
-  // Sort by date descending
-  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // Sort by date descending (safely fallback for empty/invalid dates)
+  return posts.sort((a, b) => {
+    const timeA = a.date ? new Date(a.date).getTime() : 0;
+    const timeB = b.date ? new Date(b.date).getTime() : 0;
+    const safeA = isNaN(timeA) ? 0 : timeA;
+    const safeB = isNaN(timeB) ? 0 : timeB;
+    return safeB - safeA;
+  });
 };
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
