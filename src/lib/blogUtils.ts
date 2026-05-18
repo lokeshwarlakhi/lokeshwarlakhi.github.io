@@ -26,7 +26,7 @@ const parseFrontmatter = (content: string) => {
 };
 
 // Use Vite's glob import to get all markdown files in the src/blogs directory
-const blogFiles = import.meta.glob('../blogs/*.md', { as: 'raw', eager: true });
+const blogFiles = import.meta.glob('../blogs/*.md', { query: '?raw', import: 'default', eager: true });
 
 export interface BlogPost {
   slug: string;

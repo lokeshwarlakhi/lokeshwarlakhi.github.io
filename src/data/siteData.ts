@@ -79,7 +79,6 @@ export const siteData: SiteData = {
       thumbnail: '/imgs/gallery/youtube_rag.jpeg',
       tags: ['Python', 'GenAI', 'RAG'],
       githubUrl: 'https://github.com/lokeshwarlakhi/RAG-Chat-with-YouTube',
-      // demoUrl: '#',
       isFeatured: true,
     },
     {
@@ -89,7 +88,6 @@ export const siteData: SiteData = {
       thumbnail: '/imgs/gallery/expreme.jpeg',
       tags: ['Deep Learning', 'OpenCV', 'Python'],
       githubUrl: 'https://github.com/lokeshwarlakhi/Expreme_Music_Assistant',
-      // demoUrl: '#',
       isFeatured: true,
     },
     {
