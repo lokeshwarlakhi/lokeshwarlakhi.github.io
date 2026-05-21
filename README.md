@@ -107,11 +107,23 @@ Integrated directly with **Buttondown** to manage mailing lists.
 
 ## 🚢 Automated Production Deployment
 
-To compile and deploy the latest codebase live to GitHub Pages, execute the automated deploy pipeline:
-```bash
-npm run deploy
-```
-* **What happens**: The script triggers an automatic patch version bump (`npm version patch`), commits the change, tags it (e.g. `v1.0.2`), builds the React project, publishes the compiled bundle to your live GitHub Pages environment, and pushes the new version tag to your GitHub origin.
+To compile and deploy the latest codebase live to GitHub Pages, execute one of the automated deploy pipelines:
+
+*   **Patch Release** (Bumps patch version, e.g. `1.0.1` -> `1.0.2`):
+    ```bash
+    npm run deploy
+    ```
+*   **Feature / Minor Release** (Bumps minor version, e.g. `1.0.1` -> `1.1.0`):
+    ```bash
+    npm run deploy:minor
+    ```
+*   **Major Release** (Bumps major version, e.g. `1.0.1` -> `2.0.0`):
+    ```bash
+    npm run deploy:major
+    ```
+
+**What happens**: Each script automatically triggers the respective SemVer version bump, commits the manifest changes, tags the commit, builds the React app, deploys the bundled static assets to GitHub Pages, and pushes the new release tag to GitHub.
+
 
 
 ---
