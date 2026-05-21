@@ -113,6 +113,10 @@ To compile and deploy the latest codebase live to GitHub Pages, execute one of t
     ```bash
     npm run deploy
     ```
+*   **Deploy Build Only** (Deploys current code to GitHub Pages with NO version bump or tag):
+    ```bash
+    npm run deploy:build
+    ```
 *   **Feature / Minor Release** (Bumps minor version, e.g. `1.0.1` -> `1.1.0`):
     ```bash
     npm run deploy:minor
@@ -122,7 +126,8 @@ To compile and deploy the latest codebase live to GitHub Pages, execute one of t
     npm run deploy:major
     ```
 
-**What happens**: Each script automatically triggers the respective SemVer version bump, commits the manifest changes, tags the commit, builds the React app, deploys the bundled static assets to GitHub Pages, and pushes the new release tag to GitHub.
+**What happens**: The version-bumping scripts (`deploy`, `deploy:minor`, `deploy:major`) automatically trigger the respective SemVer version bump, commit the manifest changes, tag the commit, build the React app, deploy the static assets to GitHub Pages, and push the new release tag to GitHub. The build-only script (`deploy:build`) simply compiles and publishes your live site without any version modifications or Git tags.
+
 
 
 
