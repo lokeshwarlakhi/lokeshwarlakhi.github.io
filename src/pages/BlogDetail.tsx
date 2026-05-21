@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getPostBySlug } from "@/lib/blogUtils";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -105,7 +106,8 @@ export default function BlogDetail() {
               prose-strong:text-white prose-img:rounded-3xl prose-blockquote:border-primary/50
               prose-blockquote:text-white prose-blockquote:italic prose-blockquote:bg-primary/5 prose-blockquote:py-2
             ">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
+
 
               {/* Cinematic Newsletter Callout at the bottom of the blog */}
               <div className="mt-16 pt-8 border-t border-white/10">
