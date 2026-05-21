@@ -71,7 +71,7 @@
   .prose pre { @apply bg-[#0d1117] border border-white/10 rounded-2xl p-6 md:p-8 mb-10 overflow-x-auto shadow-2xl; }
   .prose code { @apply text-primary font-mono text-[0.9em] bg-primary/10 px-1.5 py-0.5 rounded font-medium; }
   .prose pre code { @apply bg-transparent p-0 text-[14px] md:text-[15px] leading-relaxed text-white/80; }
-  .prose img { @apply rounded-[2.5rem] border border-white/5 my-16 shadow-2xl w-full; }
+  .prose img { @apply rounded-none my-16 shadow-none max-w-full h-auto; }
   .prose hr { @apply border-white/5 my-20; }
   .prose strong { @apply text-white font-bold; }
 }
