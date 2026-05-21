@@ -7452,7 +7452,7 @@ You wait...
 Then, you watch in horror as every single message fails again. Congratulations, your DLQ is now twice as big.
 
 <p> 
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2hxNXh0dHlhcWxza3IzdDNiNHc2Z2dwNWQ4M2IwajF1NjRweDh5dSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iJJ6E58EttmFqgLo96/giphy.gif" alt="The Desription"> 
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2hxNXh0dHlhcWxza3IzdDNiNHc2Z2dwNWQ4M2IwajF1NjRweDh5dSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iJJ6E58EttmFqgLo96/giphy.gif" alt="The Desription" width="10" height="20"> 
 </p>
 
 

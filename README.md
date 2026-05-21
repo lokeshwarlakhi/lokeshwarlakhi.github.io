@@ -111,7 +111,8 @@ To compile and deploy the latest codebase live to GitHub Pages, execute the auto
 ```bash
 npm run deploy
 ```
-* **What happens**: The script triggers Vite to build, compile, and minify type-safe resources under `dist/`, then calls `gh-pages` to publish the static release directory directly to your live environment.
+* **What happens**: The script triggers an automatic patch version bump (`npm version patch`), commits the change, tags it (e.g. `v1.0.2`), builds the React project, publishes the compiled bundle to your live GitHub Pages environment, and pushes the new version tag to your GitHub origin.
+
 
 ---
 <div align="center">
