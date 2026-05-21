@@ -69,13 +69,6 @@ jobs:
       # Creating a physical .env file in the runner replicates the local environment exactly.
       - name: Create .env file
         run: |
-          echo "==== Secret Diagnostics ===="
-          if [ -z "${{ secrets.VITE_EMAILJS_SERVICE_ID }}" ]; then echo "VITE_EMAILJS_SERVICE_ID is EMPTY"; else echo "VITE_EMAILJS_SERVICE_ID is present"; fi
-          if [ -z "${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" ]; then echo "VITE_EMAILJS_TEMPLATE_ID is EMPTY"; else echo "VITE_EMAILJS_TEMPLATE_ID is present"; fi
-          if [ -z "${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" ]; then echo "VITE_EMAILJS_PUBLIC_KEY is EMPTY"; else echo "VITE_EMAILJS_PUBLIC_KEY is present"; fi
-          if [ -z "${{ secrets.VITE_BUTTONDOWN_USERNAME }}" ]; then echo "VITE_BUTTONDOWN_USERNAME is EMPTY"; else echo "VITE_BUTTONDOWN_USERNAME is present"; fi
-          echo "============================"
-          
           echo "VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}" >> .env
           echo "VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" >> .env
           echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" >> .env
