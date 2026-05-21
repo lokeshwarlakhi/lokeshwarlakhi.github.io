@@ -35,97 +35,100 @@ export default function BlogDetail() {
       />
 
       <div className="container mx-auto px-6 md:px-12 pt-32">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <header className="mb-16">
-            <Link 
-              to="/all-posts" 
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-12 group"
-            >
-              <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> 
-              Back to All Posts
-            </Link>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,896px)_300px] gap-16 justify-center">
+            
+            {/* Left Column: Header, Poster, and Article Content */}
+            <div className="min-w-0">
+              {/* Header */}
+              <header className="mb-16">
+                <Link 
+                  to="/all-posts" 
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-12 group"
+                >
+                  <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+                  Back to All Posts
+                </Link>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-primary font-bold mb-8">
-                <span className="flex items-center gap-2">
-                  <Calendar size={14} /> {post.date}
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                <span className="flex items-center gap-2">
-                  <Clock size={14} /> {post.readTime}
-                </span>
-              </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-primary font-bold mb-8">
+                    <span className="flex items-center gap-2">
+                      <Calendar size={14} /> {post.date}
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                    <span className="flex items-center gap-2">
+                      <Clock size={14} /> {post.readTime}
+                    </span>
+                  </div>
 
-              <h1 className="text-4xl md:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
-                {post.title}
-              </h1>
+                  <h1 className="text-4xl md:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
+                    {post.title}
+                  </h1>
 
-              <div className="flex flex-wrap gap-3 mb-10">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-muted-foreground">
-                    <Tag size={12} className="text-primary" /> {tag}
-                  </span>
-                ))}
-              </div>
+                  <div className="flex flex-wrap gap-3 mb-10">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-muted-foreground">
+                        <Tag size={12} className="text-primary" /> {tag}
+                      </span>
+                    ))}
+                  </div>
 
-              <p className="text-xl md:text-2xl text-muted-foreground/80 font-medium leading-relaxed max-w-3xl">
-                {post.description}
-              </p>
-            </motion.div>
-          </header>
+                  <p className="text-xl md:text-2xl text-muted-foreground/80 font-medium leading-relaxed">
+                    {post.description}
+                  </p>
+                </motion.div>
+              </header>
 
-          {/* Hero Image */}
-          {post.cover && (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="aspect-video rounded-[2.5rem] overflow-hidden border border-white/5 mb-20 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
-            >
-              <img 
-                src={post.cover} 
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          )}
+              {/* Hero Image */}
+              {post.cover && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  className="aspect-video rounded-[2.5rem] overflow-hidden border border-white/5 mb-20 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+                >
+                  <img 
+                    src={post.cover} 
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              )}
 
-          {/* Content Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-16">
-            <article className="prose prose-invert prose-primary max-w-none 
-              prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight
-              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
-              prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-              prose-code:text-primary prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-              prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl prose-pre:shadow-2xl
-              prose-strong:text-white prose-img:rounded-3xl prose-blockquote:border-primary/50
-              prose-blockquote:text-white prose-blockquote:italic prose-blockquote:bg-primary/5 prose-blockquote:py-2
-            ">
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
+              {/* Article content */}
+              <article className="prose prose-invert prose-primary max-w-none 
+                prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight
+                prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
+                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                prose-code:text-primary prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl prose-pre:shadow-2xl
+                prose-strong:text-white prose-img:rounded-3xl prose-blockquote:border-primary/50
+                prose-blockquote:text-white prose-blockquote:italic prose-blockquote:bg-primary/5 prose-blockquote:py-2
+              ">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
 
+                {/* Cinematic Newsletter Callout at the bottom of the blog */}
+                <div className="mt-16 pt-8 border-t border-white/10">
+                  <p className="text-lg text-muted-foreground italic">
+                    Enjoyed this post?{" "}
+                    <Link 
+                      to="/newsletter" 
+                      className="text-primary font-bold hover:underline transition-all relative group inline-flex items-center gap-1 not-italic"
+                    >
+                      Join my newsletter
+                      <span className="absolute left-0 bottom-0 w-full h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                    </Link>{" "}
+                    to get the next one directly in your inbox.
+                  </p>
+                </div>
+              </article>
+            </div>
 
-              {/* Cinematic Newsletter Callout at the bottom of the blog */}
-              <div className="mt-16 pt-8 border-t border-white/10">
-                <p className="text-lg text-muted-foreground italic">
-                  Enjoyed this post?{" "}
-                  <Link 
-                    to="/newsletter" 
-                    className="text-primary font-bold hover:underline transition-all relative group inline-flex items-center gap-1 not-italic"
-                  >
-                    Join my newsletter
-                    <span className="absolute left-0 bottom-0 w-full h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  </Link>{" "}
-                  to get the next one directly in your inbox.
-                </p>
-              </div>
-            </article>
-
-            {/* Sidebar / TOC placeholder */}
+            {/* Right Column: Floating Sidebar */}
             <aside className="hidden lg:block">
               <div className="sticky top-32 space-y-12">
                 <div className="space-y-4">
@@ -141,9 +144,11 @@ export default function BlogDetail() {
                 </div>
               </div>
             </aside>
+
           </div>
         </div>
       </div>
+
     </main>
   );
 }
