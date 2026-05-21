@@ -109,13 +109,13 @@ Integrated directly with **Buttondown** to manage mailing lists.
 
 To compile and deploy the latest codebase live to GitHub Pages, execute one of the automated deploy pipelines:
 
-*   **Patch Release** (Bumps patch version, e.g. `1.0.1` -> `1.0.2`):
+*   **Deploy Build Only** (Deploys current code to GitHub Pages with NO version bump or tag):
     ```bash
     npm run deploy
     ```
-*   **Deploy Build Only** (Deploys current code to GitHub Pages with NO version bump or tag):
+*   **Patch Release** (Bumps patch version, e.g. `1.0.1` -> `1.0.2`):
     ```bash
-    npm run deploy:build
+    npm run deploy:patch
     ```
 *   **Feature / Minor Release** (Bumps minor version, e.g. `1.0.1` -> `1.1.0`):
     ```bash
