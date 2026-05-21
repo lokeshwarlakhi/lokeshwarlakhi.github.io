@@ -3,7 +3,7 @@ title: "Stop Using the Azure Portal to Clear Your DLQ (Do This in Python Instead
 date: "2026-05-21"
 description: "Clear you DLQ fastest way possible."
 tags: ["DevOps", "Azure", "Python"]
-cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+cover: "https://cdn.mos.cms.futurecdn.net/wUTUTAHkb4T9MySxjaJiQg-1200-80.jpg.webp"
 ---
 
 You select the dead-lettered messages in the Azure Portal... 
