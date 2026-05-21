@@ -1,0 +1,87 @@
+# ==============================================================================
+# GitHub Actions Auto-Deployment Workflow for Vite React Portfolio
+# ==============================================================================
+# This workflow automates the building and publishing of the portfolio site
+# to GitHub Pages. It triggers dynamically based on changes to blogs or to
+# this workflow file itself.
+# ==============================================================================
+
+name: Deploy Portfolio Site
+
+# ------------------------------------------------------------------------------
+# Triggers configuration: Defines when this workflow will run
+# ------------------------------------------------------------------------------
+on:
+  push:
+    # Only execute this workflow when a push occurs on the main branch
+    branches:
+      - main
+    # Limit execution to cases where files in these paths are modified
+    paths:
+      # Trigger if any Markdown files inside the blogs folder are added/modified/deleted
+      - 'src/blogs/**'
+      # Trigger if this deployment workflow definition is updated (e.g., when building/updating this file)
+      - '.github/workflows/deploy.yml'
+
+  # Allows manual execution of this workflow directly from the Actions tab on GitHub UI
+  workflow_dispatch:
+
+# ------------------------------------------------------------------------------
+# Permissions configuration: Grants GITHUB_TOKEN appropriate write access
+# ------------------------------------------------------------------------------
+permissions:
+  # 'contents: write' is required to allow the runner to push static assets
+  # back into the 'gh-pages' branch of this repository.
+  contents: write
+
+# ------------------------------------------------------------------------------
+# Jobs definition: Steps to download, build, and deploy the application
+# ------------------------------------------------------------------------------
+jobs:
+  build-and-deploy:
+    # Run the job on a clean, hosted Ubuntu Linux runner environment
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the source code from the repository
+      # This fetches the branch content so the workflow can access and process files.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the Node.js runtime environment
+      # Configures Node.js version 18 (which matches package dependencies) and
+      # automatically caches npm packages based on package-lock.json.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm' # Speeds up consecutive builds by caching the ~/.npm directory
+
+      # Step 3: Clean install project dependencies
+      # 'npm ci' (Clean Install) is faster and more strict than 'npm install'.
+      # It strictly requires package-lock.json and ensures a clean, reproducible setup.
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 4: Build the production bundle
+      # Compiles TypeScript (tsc) and bundles assets using Vite into the /dist directory.
+      # Environment variables prefixed with VITE_ are injected during the build.
+      # If configured as GitHub repository secrets, they are baked into the static build.
+      - name: Build site
+        env:
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+          VITE_BUTTONDOWN_USERNAME: ${{ secrets.VITE_BUTTONDOWN_USERNAME }}
+        run: npm run build
+
+      # Step 5: Publish build artifacts to GitHub Pages
+      # This action takes the compiled static files from the /dist folder and
+      # commits them to the 'gh-pages' branch, deploying the updates live.
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # Use the repository's built-in token to authenticate the push
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The directory where Vite outputs compiled production files
+          publish_dir: ./dist
